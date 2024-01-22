@@ -1,0 +1,16 @@
+<!-- sellingpoint_import.html -->
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Import SellingPoint CSV file</title>
+</head>
+<body>
+    <h1>Import CSV</h1>
+    <form method="post" enctype="multipart/form-data" action="{% url 'sellingpoint_import' %}">
+        {% csrf_token %}
+        <input type="file" name="csv_file" accept=".csv" required>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>

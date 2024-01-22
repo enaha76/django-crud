@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Confirm Delete Product Family</title>{% endblock %}
+
+{% block content %}
+<form action="{% url 'productfamily_delete' object.id %}" method="post" class="p-5 text-center">
+    {% csrf_token %}
+    <p class="h5 p-3">Are you sure you want to delete "{{ object.label }}"?</p>
+    <input type="submit" value="Confirm" class="btn btn-danger"/>
+    <a href="{% url 'productfamily_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

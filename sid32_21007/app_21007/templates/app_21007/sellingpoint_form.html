@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}<title>Add Selling Point</title>{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center">Add a Selling Point</h1>
+<form action="" method="post" class="text-center p-5">
+    {% csrf_token %}
+    
+    {{ form.code.label_tag }}
+    {{ form.code }}
+    
+    {{ form.wilaya.label_tag }}
+    {{ form.wilaya }}
+    
+    {{ form.moughataa.label_tag }}
+    {{ form.moughataa }}
+    
+    {{ form.commune.label_tag }}
+    {{ form.commune }}
+    
+    {{ form.gps_lat.label_tag }}
+    {{ form.gps_lat }}
+    
+    {{ form.gps_long.label_tag }}
+    {{ form.gps_long }}
+    
+    <input type="submit" class="btn btn-primary" value="Save" />
+</form>
+
+{% endblock %}

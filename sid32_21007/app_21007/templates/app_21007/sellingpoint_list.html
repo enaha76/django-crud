@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Selling Points</title>{% endblock %}
+
+{% block content %}
+<div class="text-end pt-5">
+    <a href="{% url 'sellingpoint_create' %}" class="btn btn-primary">Add Selling Point</a>
+</div>
+<h1 class="text-center">List of Selling Points</h1>
+<!-- sellingpoint_list.html -->
+<!-- ... your content ... -->
+
+<form method="post" enctype="multipart/form-data" action="{% url 'sellingpoint_import' %}">
+  {% csrf_token %}
+  <input type="file" name="csv_file" accept=".csv" required>
+  <input type="submit" value="Import SellingPoints">
+</form>
+
+
+{% if sellingpoint_list %}
+  <table class="table table-centered mb-0">
+    <thead class="table-dark">
+      <tr>
+        <!-- <th scope="col">ID</th> -->
+        <th scope="col">Code</th>
+        <th scope="col">Wilaya</th>
+        <th scope="col">Moughataa</th>
+        <th scope="col">Commune</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for sellingpoint in sellingpoint_list %}
+        <tr>
+          <!-- <th scope="row">{{ sellingpoint.id }}</th> -->
+          <td>{{ sellingpoint.code }}</td>
+          <td>{{ sellingpoint.wilaya }}</td>
+          <td>{{ sellingpoint.moughataa }}</td>
+          <td>{{ sellingpoint.commune }}</td>
+          <td>
+            <a href="{% url 'sellingpoint_detail' sellingpoint.id %}" class="btn btn-info">View</a>
+            <a href="{% url 'sellingpoint_update' sellingpoint.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'sellingpoint_delete' sellingpoint.id %}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>There are no selling points in the database.</p>
+{% endif %}
+{% endblock %}

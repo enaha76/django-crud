@@ -1,0 +1,207 @@
+
+
+
+
+<!DOCTYPE html>
+    <html lang="en">
+      {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
+        <meta content="Coderthemes" name="author">
+        <!-- App favicon -->
+        <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
+
+        <!-- third party css -->
+        <link href="{% static 'assets/css/vendor/jquery-jvectormap-1.2.2.css' %}" rel="stylesheet" type="text/css">
+        <!-- third party css end -->
+
+        <!-- App css -->
+        <!-- href="{% static 'assets/css/owl.css' %} -->
+        <link href="{%  static 'assets/css/icons.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'assets/css/app.min.css' %}" rel="stylesheet" type="text/css" id="light-style">
+        <link href="{% static 'assets/css/app-dark.min.css' %}" rel="stylesheet" type="text/css" id="dark-style">
+
+    </head>
+
+    <body class="loading" data-layout="topnav" data-layout-config='{"layoutBoxed":false,"darkMode":false,"showRightSidebarOnStart": true}'>
+        <!-- Begin page -->
+        <div class="wrapper">
+
+            <div class="content-page">
+                <div class="content">
+                    <div class="navbar-custom topnav-navbar">
+                        <div class="container-fluid">
+
+                            <!-- LOGO -->
+                            <a href="" class="topnav-logo">
+                                <span class="topnav-logo-lg">
+                                    <img src="{% static 'assets\images\mylogo.png' %}" alt="" height="60">
+                                </span>
+                                <!-- <span class="topnav-logo-sm">
+                                    <img src="C:\Users\hp\Desktop\ben_project\django_app\sid32_21007\app_21007\static\assets\images\mylogo.png" alt="" height="16">
+                                </span> -->
+                            </a>
+
+                            <ul class="list-unstyled topbar-menu float-end mb-0">
+
+              
+                            </ul>
+                            
+                        </div>
+                    </div>
+
+                    <div class="topnav btn-primary" >
+                        <div class="container-fluid">
+                            <nav class="navbar navbar-dark navbar-expand-lg topnav-menu">
+        
+
+                                
+                                <div class="collapse navbar-collapse" id="topnav-menu-content">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item ">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="/" id="topnav-dashboards" role="button" >
+                                                 <span style="color: #000103;">Home</span>
+                                            </a>
+                                        </li> 
+
+                                        <li class="nav-item ">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="/productfamily" id="topnav-dashboards" role="button" >
+                                                 <span style="color: #000103;">Product Family</span>
+                                            </a>
+                                        </li> 
+
+                                        <li class="nav-item ">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="/product" id="topnav-dashboards" role="button" >
+                                                 <span style="color: #000103;">Product</span>
+                                            </a>
+                                        </li> 
+
+                                        <li class="nav-item ">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="/sellingpoint" id="topnav-dashboards" role="button" >
+                                                 <span style="color: #000103;">Selling Point</span>
+                                            </a>
+                                        </li> 
+
+                                        <li class="nav-item ">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="/price" id="topnav-dashboards" role="button" >
+                                                 <span style="color: #000103;">Price</span>
+                                            </a>
+                                        </li> 
+
+                                        <li class="nav-item ">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="/basket" id="topnav-dashboards" role="button" >
+                                                 <span style="color: #000103;">Basket</span>
+                                            </a>
+                                        </li> 
+
+                                        <li class="nav-item ">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="/productbasket" id="topnav-dashboards" role="button" >
+                                                 <span style="color: #000103;">Product Basket</span>
+                                            </a>
+                                        </li> 
+                                        
+                                        
+
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <form class="d-flex">
+                                            <!-- <div class="input-group">
+                                                <input type="text" class="form-control form-control-light" id="dash-daterange">
+                                                <span class="input-group-text bg-primary border-primary text-white">
+                                                    <i class="mdi mdi-calendar-range font-13"></i>
+                                                </span>
+                                            </div> -->
+                                            <!-- <button type="button" class="btn " style="background-color: #4b8ef1; color: #000307;">Add Product Family </button> -->
+
+                                            <!-- <button type="button" class="btn "><i class="mdi mdi-cloud me-1"></i> <span>Cloud Hosting</span> </button> -->
+                                            <!-- <a href="javascript: void(0);" class="btn btn-primary ms-2">
+                                                <i class="mdi mdi-autorenew"></i>
+                                            </a>
+                                            <a href="javascript: void(0);" class="btn btn-primary ms-1">
+                                                <i class="mdi mdi-filter-variant"></i>
+                                            </a> -->
+                                        </form>
+                                    </div>
+                                    <h4 class="page-title">Dashboard</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+                         
+                        {% block content %}
+      
+                        {% endblock %}
+
+
+                    </div>
+                    <!-- container -->
+
+                </div>
+                <!-- content -->
+
+                <!-- Footer Start       style="background-color: #4b8ef1; color: #000307;"                      #4b8ef1; -->
+                <footer class="footer " >
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <script>document.write(new Date().getFullYear())</script> © Hyper - Coderthemes.com
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-md-end footer-links d-none d-md-block"  >
+                                    <a href="javascript: void(0);">About</a>
+                                    <a href="javascript: void(0);">Support</a>
+                                    <a href="javascript: void(0);">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+      
+
+        <div class="rightbar-overlay"></div>
+        <!-- /End-bar -->
+
+
+        <script src="{% static 'assets/js/vendor.min.js' %}"></script>
+        <script src="{% static 'assets/js/app.min.js' %}"></script>
+
+        <!-- third party js -->
+        <script src="{% static 'assets/js/vendor/apexcharts.min.js' %}"></script>
+        <script src="{% static 'assets/js/vendor/jquery-jvectormap-1.2.2.min.js' %}"></script>
+        <script src="{% static 'assets/js/vendor/jquery-jvectormap-world-mill-en.js' %}"></script>
+        <!-- third party js ends -->
+
+        <!-- demo app -->
+        <script src="{% static 'assets/js/pages/demo.dashboard.js' %}"></script>
+
+        <!-- end demo js-->
+    </body>
+</html>

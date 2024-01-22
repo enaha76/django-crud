@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Products</title>{% endblock %}
+
+
+{% block content %}
+<div class="row">
+  <div class="col-12">
+      <div class="card">
+          <div class="card-body">
+
+              <div class="row mb-2">
+                  <div class="col-sm-4">
+                      <a href="{% url 'product_create' %}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i>Add Products</a>
+                  </div>
+                  
+                  <div class="col-sm-8">
+                      <div class="text-sm-end">
+                          <button type="button" class="btn" style="background-color: #4b8ef1; color: #000307;" data-bs-toggle="modal" data-bs-target="#info-alert-modal">Import Product Family</button>
+                      </div>
+                  </div>
+              </div>
+
+              <div id="info-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog modal-sm">
+                      <div class="modal-content">
+                          <div class="modal-body p-4">
+                              <div class="text-center">
+                              <form method="post" enctype="multipart/form-data" action="{% url 'productfamily_import' %}">
+                              {% csrf_token %}
+                              
+                              <div class="row mb-3">
+                                  <div class="col-md-9">
+                                      <input type="file" name="csv_file" accept=".csv" required>
+                                  </div>
+                              </div>
+                              <button type="file" class="btn btn-light mb-2 me-1">Import</button>
+                            </form> 
+                      </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="table-responsive">
+                {% if product_list %}
+                  <table class="table table-centered mb-0">
+                      <thead class="table-dark">
+                          <tr>
+                            <!-- <th scope="col">ID</th> -->
+                            <th scope="col">Label</th>
+                            <th scope="col">Price Unit</th>
+                            <th scope="col">Code</th>
+                            <th scope="col">Product Family</th>
+                            <th scope="col">Actions</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        {% for product in product_list %}
+                        <tr>
+                          
+                          <td>{{ product.label }}</td>
+                          <td>${{ product.price_unit }}</td>
+                          <td>{{ product.code }}</td>
+                          <td>{{ product.productfamily.label }}</td>
+                          <td>
+                            <a href="{% url 'product_detail' product.id %}" class="btn btn-info">View</a>
+                            <a href="{% url 'product_update' product.id %}" class="btn btn-primary">Edit</a>
+                            <a href="{% url 'product_delete' product.id %}" class="btn btn-danger">Delete</a>
+                          </td>
+                        </tr>
+                      {% endfor %}
+                         
+                      </tbody>
+                  </table>
+                 
+                  {% else %}
+  <p>There are no products in the database.</p>
+                 {% endif %}
+              </div>
+          </div> 
+      </div> 
+  </div>
+</div>
+{% endblock %}

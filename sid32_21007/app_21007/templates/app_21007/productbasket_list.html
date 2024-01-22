@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}<title>ProductBaskets</title>{% endblock %}
+
+{% block content %}
+
+<div class="text-end pt-5">
+    <a href="{% url 'productbasket_create' %}" class="btn btn-primary">Add ProductBasket</a>
+</div>
+<h1 class="text-center">List of ProductBaskets</h1>
+
+
+<form method="post" enctype="multipart/form-data" action="{% url 'productbasket_import' %}">
+  {% csrf_token %}
+  <input type="file" name="csv_file" accept=".csv" required>
+  <input type="submit" value="Import ProductBaskets">
+</form>
+
+{% if productbasket_list %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Price</th>
+        <th scope="col">Basket</th>
+        <th scope="col">Ponderation</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for productbasket in productbasket_list %}
+        <tr>
+          <th scope="row">{{ productbasket.id }}</th>
+          <td>${{ productbasket.price.value }}</td>
+          <td>{{ productbasket.basket.label }}</td>
+          <td>{{ productbasket.ponderation }}</td>
+          <td>
+            <a href="{% url 'productbasket_detail' productbasket.id %}" class="btn btn-info">View</a>
+            <a href="{% url 'productbasket_update' productbasket.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'productbasket_delete' productbasket.id %}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+{% else %}
+  <p>There are no product baskets in the database.</p>
+{% endif %}
+{% endblock %}
+
+
+
+
+

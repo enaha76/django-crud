@@ -1,0 +1,101 @@
+value,date,sellingpoint,product
+44.85,2022-01-01,11,Mountain Bike
+49.05,2022-01-02,5,Travel Backpack
+14.73,2022-01-03,11,Red Delicious Apples
+26.59,2022-01-04,10,Organic Whole Wheat Bread
+46.13,2022-01-05,1,Organic Whole Wheat Bread
+18.43,2022-01-06,5,Organic Whole Wheat Bread
+11.4,2022-01-07,1,Stainless Steel Water Bottle
+44.64,2022-01-08,6,Premium Dark Chocolate Bar
+19.74,2022-01-09,1,Soft Cotton T-Shirt
+8.54,2022-01-10,8,Red Delicious Apples
+46.08,2022-01-11,6,Red Delicious Apples
+21.79,2022-01-12,10,Mountain Bike
+12.19,2022-01-13,11,Stainless Steel Water Bottle
+48.12,2022-01-14,6,Wireless Earbuds
+31.39,2022-01-15,5,Stainless Steel Water Bottle
+31.93,2022-01-16,9,Mountain Bike
+19.33,2022-01-17,11,Recycled Paper Towels
+25.01,2022-01-18,6,Organic Whole Wheat Bread
+15.1,2022-01-19,1,Recycled Paper Towels
+41.87,2022-01-20,9,Wireless Earbuds
+22.38,2022-01-21,1,Mountain Bike
+47.69,2022-01-22,10,Premium Dark Chocolate Bar
+30.32,2022-01-23,1,Premium Dark Chocolate Bar
+37.59,2022-01-24,9,Wireless Earbuds
+12.52,2022-01-25,8,Travel Backpack
+6.62,2022-01-26,10,Mountain Bike
+22.7,2022-01-27,1,Soft Cotton T-Shirt
+43.49,2022-01-28,8,Recycled Paper Towels
+41.13,2022-01-29,10,Stainless Steel Water Bottle
+39.61,2022-01-30,10,Wireless Earbuds
+48.35,2022-01-31,9,Red Delicious Apples
+41.46,2022-02-01,10,Stainless Steel Water Bottle
+25.99,2022-02-02,10,Organic Whole Wheat Bread
+27.79,2022-02-03,9,Wireless Earbuds
+8.38,2022-02-04,11,Red Delicious Apples
+26.17,2022-02-05,1,Travel Backpack
+34.11,2022-02-06,6,Wireless Earbuds
+45.42,2022-02-07,11,Soft Cotton T-Shirt
+12.74,2022-02-08,2,Red Delicious Apples
+33.71,2022-02-09,5,Premium Dark Chocolate Bar
+16.89,2022-02-10,6,Recycled Paper Towels
+41.58,2022-02-11,2,Travel Backpack
+7.21,2022-02-12,5,Premium Dark Chocolate Bar
+28.38,2022-02-13,8,Wireless Earbuds
+17.32,2022-02-14,10,Fair Trade Coffee Beans
+15.84,2022-02-15,6,Fair Trade Coffee Beans
+46.06,2022-02-16,1,Stainless Steel Water Bottle
+47.05,2022-02-17,10,Mountain Bike
+38.55,2022-02-18,9,Stainless Steel Water Bottle
+19.83,2022-02-19,1,Soft Cotton T-Shirt
+21.97,2022-02-20,8,Wireless Earbuds
+31.15,2022-02-21,8,Premium Dark Chocolate Bar
+27.59,2022-02-22,8,Recycled Paper Towels
+7.61,2022-02-23,11,Premium Dark Chocolate Bar
+43.69,2022-02-24,2,Fair Trade Coffee Beans
+48.35,2022-02-25,11,Fair Trade Coffee Beans
+23.51,2022-02-26,10,Travel Backpack
+33.0,2022-02-27,6,Recycled Paper Towels
+33.3,2022-02-28,5,Wireless Earbuds
+47.12,2022-03-01,10,Recycled Paper Towels
+7.09,2022-03-02,11,Organic Whole Wheat Bread
+28.25,2022-03-03,5,Premium Dark Chocolate Bar
+15.01,2022-03-04,11,Soft Cotton T-Shirt
+30.97,2022-03-05,2,Stainless Steel Water Bottle
+31.83,2022-03-06,2,Premium Dark Chocolate Bar
+46.72,2022-03-07,9,Mountain Bike
+27.19,2022-03-08,9,Travel Backpack
+49.82,2022-03-09,2,Mountain Bike
+44.9,2022-03-10,1,Stainless Steel Water Bottle
+34.07,2022-03-11,11,Fair Trade Coffee Beans
+10.05,2022-03-12,9,Organic Whole Wheat Bread
+48.99,2022-03-13,8,Soft Cotton T-Shirt
+33.18,2022-03-14,11,Mountain Bike
+49.33,2022-03-15,1,Premium Dark Chocolate Bar
+40.46,2022-03-16,8,Organic Whole Wheat Bread
+25.98,2022-03-17,8,Wireless Earbuds
+49.4,2022-03-18,9,Stainless Steel Water Bottle
+33.17,2022-03-19,5,Wireless Earbuds
+15.1,2022-03-20,5,Premium Dark Chocolate Bar
+7.9,2022-03-21,6,Red Delicious Apples
+27.12,2022-03-22,1,Fair Trade Coffee Beans
+26.19,2022-03-23,2,Red Delicious Apples
+27.8,2022-03-24,11,Stainless Steel Water Bottle
+38.5,2022-03-25,5,Recycled Paper Towels
+30.15,2022-03-26,9,Travel Backpack
+37.18,2022-03-27,1,Fair Trade Coffee Beans
+43.74,2022-03-28,5,Fair Trade Coffee Beans
+8.6,2022-03-29,1,Organic Whole Wheat Bread
+44.59,2022-03-30,6,Organic Whole Wheat Bread
+45.62,2022-03-31,1,Stainless Steel Water Bottle
+10.11,2022-04-01,1,Mountain Bike
+16.31,2022-04-02,5,Red Delicious Apples
+44.28,2022-04-03,6,Red Delicious Apples
+6.15,2022-04-04,1,Wireless Earbuds
+21.81,2022-04-05,10,Organic Whole Wheat Bread
+34.51,2022-04-06,8,Wireless Earbuds
+31.35,2022-04-07,1,Premium Dark Chocolate Bar
+16.5,2022-04-08,9,Fair Trade Coffee Beans
+16.66,2022-04-09,10,Travel Backpack
+48.65,2022-04-10,9,Stainless Steel Water Bottle

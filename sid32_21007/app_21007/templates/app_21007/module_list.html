@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}<title>Modules</title>{% endblock %}
+
+{% block content %}
+
+
+<div class="text-end pt-5"> <a href="/module/add" class="btn btn-primary">Add Module</a></div>
+<h1 class="text-center">Liste des modules</h1>
+
+{% if module_list %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">code</th>
+        <th scope="col">label</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for w in module_list %}
+      <tr>
+        <th scope="row">{{ w.id }}</th>
+        <td>{{ w.code }}</td>
+        <td>{{ w.label }}</td>
+        <td>
+          <a href="/module/{{ w.id }}" class="btn btn-info">View</a> | <a href="/module/update/{{ w.id }}" class="btn btn-primary">Edit</a> | <a href="/module/delete/{{ w.id }}" class="btn btn-danger">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>There are no module in the database.</p>
+{% endif %}
+{% endblock %}

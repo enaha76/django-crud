@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Product Family Details</title>{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center">Details of Product Family</h1>
+<ul class="list-group p-5">
+    <li class="list-group-item"><b>ID</b>: {{ productfamily.id }}</li>
+    <li class="list-group-item"><b>Label</b>: {{ productfamily.label }}</li>
+</ul>
+
+{% endblock %}

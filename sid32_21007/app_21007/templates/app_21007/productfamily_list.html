@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}<title>Product Families</title>{% endblock %}
+
+{% block content %}
+
+
+
+<div class="text-end pt-5">
+    <a href="{% url 'productfamily_create' %}" class="btn btn-primary">Add Product Family</a>
+</div>
+
+
+<h1 class="text-center">List of Product Families</h1>
+
+<form method="post" enctype="multipart/form-data" action="{% url 'productfamily_import' %}">
+  {% csrf_token %}
+  <input type="file" name="csv_file" accept=".csv" required>
+  <input type="submit" value="Import Product Family">
+</form>
+
+{% if productfamily_list %}
+  <ul class="list-group">
+    {% for productfamily in productfamily_list %}
+      <li class="list-group-item">
+        <a href="{% url 'productfamily_detail' productfamily.id %}">{{ productfamily.label }}</a>
+        <span class="float-end">
+          <a href="{% url 'productfamily_update' productfamily.id %}" class="btn btn-primary btn-sm">Edit</a>
+          <a href="{% url 'productfamily_delete' productfamily.id %}" class="btn btn-danger btn-sm">Delete</a>
+        </span>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>There are no product families in the database.</p>
+{% endif %}
+{% endblock %}

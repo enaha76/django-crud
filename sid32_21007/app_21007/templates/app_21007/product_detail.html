@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Product Details</title>{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center">Details of Product</h1>
+<ul class="list-group p-5">
+    <li class="list-group-item"><b>ID</b>: {{ product.id }}</li>
+    <li class="list-group-item"><b>Label</b>: {{ product.label }}</li>
+    <li class="list-group-item"><b>Price Unit</b>: ${{ product.price_unit }}</li>
+    <li class="list-group-item"><b>Code</b>: {{ product.code }}</li>
+    <li class="list-group-item"><b>Product Family</b>: {{ product.productfamily.label }}</li>
+</ul>
+
+{% endblock %}

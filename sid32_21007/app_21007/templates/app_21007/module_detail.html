@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Module</title>{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center"> Details of Module</h1>
+<ul class="list-group p-5">
+    <li class="list-group-item"><b>ID</b>: {{module.id}}</li>
+    <li class="list-group-item"><b>Code</b>: {{module.code}}</li>
+    <li class="list-group-item"><b>Label</b>: {{module.label}}</li>
+    <li class="list-group-item"><b>Total CM</b>: {{module.total_cm}}</li>
+    <li class="list-group-item"><b>Total TD</b>: {{module.total_td}}</li>
+    <li class="list-group-item"><b>Total TP</b>: {{module.total_tp}}</li>
+    <li class="list-group-item"><b>Department</b>: {{module.department.name}}</li>
+</ul>
+
+
+{% endblock %}

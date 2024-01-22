@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/animated.css' %}">
+
+
+{% block title %}<title>Confirm Delete Basket</title>{% endblock %}
+
+{% block content %}
+<form action="{% url 'basket_delete' object.id %}" method="post" class="p-5 text-center">
+    {% csrf_token %}
+    <p class="h5 p-3">Are you sure you want to delete this basket?</p>
+    <input type="submit" value="Confirm" class="btn btn-danger"/>
+    <a href="{% url 'basket_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/animated.css' %}">
+
+
+{% block title %}<title>Add Basket</title>{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center">Add a Basket</h1>
+<form action="" method="post" class="text-center p-5">
+    {% csrf_token %}
+    
+    {{ form.label.label_tag }}
+    {{ form.label }}
+    
+    {{ form.code.label_tag }}
+    {{ form.code }}
+    
+    {{ form.description.label_tag }}
+    {{ form.description }}
+    
+    <input type="submit" class="btn btn-primary" value="Save" />
+</form>
+
+{% endblock %}

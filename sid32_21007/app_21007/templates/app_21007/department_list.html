@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Department</title>{% endblock %}
+
+{% block content %}
+
+
+<div class="text-end pt-5"> <a href="/department/add" class="btn btn-primary">Add Department</a></div>
+<h1 class="text-center">Liste des departements</h1>
+
+{% if department_list %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">code</th>
+        <th scope="col">name</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for w in department_list %}
+      <tr>
+        <th scope="row">{{ w.id }}</th>
+        <td>{{ w.code }}</td>
+        <td>{{ w.name }}</td>
+        <td>
+          <a href="/department/{{ w.id }}" class="btn btn-info">View</a> | <a href="/department/update/{{ w.id }}" class="btn btn-primary">Edit</a> | <a href="/department/delete/{{ w.id }}" class="btn btn-danger">Delete</a>
+          | <a href="/module/department/{{ w.code }}/" class="btn btn-secondary">Modules</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>There are no department in the database.</p>
+{% endif %}
+{% endblock %}

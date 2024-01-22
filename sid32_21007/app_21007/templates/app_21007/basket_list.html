@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/animated.css' %}">
+
+
+{% block title %}<title>Baskets</title>{% endblock %}
+
+{% block content %}
+<div class="text-end pt-5">
+    <a href="{% url 'basket_create' %}" class="btn btn-primary">Add Basket</a>
+</div>
+<h1 class="text-center">List of Baskets</h1>
+<form method="post" enctype="multipart/form-data" action="{% url 'basket_import' %}">
+  {% csrf_token %}
+  <input type="file" name="csv_file" accept=".csv" required>
+  <input type="submit" value="Import Baskets">
+</form>
+
+{% if basket_list %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Label</th>
+        <th scope="col">Code</th>
+        <th scope="col">Description</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for basket in basket_list %}
+        <tr>
+          <th scope="row">{{ basket.id }}</th>
+          <td>{{ basket.label }}</td>
+          <td>{{ basket.code }}</td>
+          <td>{{ basket.description }}</td>
+          <td>
+            <a href="{% url 'basket_detail' basket.id %}" class="btn btn-info">View</a>
+            <a href="{% url 'basket_update' basket.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'basket_delete' basket.id %}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>There are no baskets in the database.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Add Product</title>{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center">Add a Product</h1>
+<form action="" method="post" class="text-center p-5">
+    {% csrf_token %}
+    
+    {{ form.label.label_tag }}
+    {{ form.label }}
+    
+    {{ form.price_unit.label_tag }}
+    {{ form.price_unit }}
+    
+    {{ form.code.label_tag }}
+    {{ form.code }}
+    
+    {{ form.productfamily.label_tag }}
+    {{ form.productfamily }}
+    
+    <input type="submit" class="btn btn-primary" value="Save" />
+</form>
+
+{% endblock %}

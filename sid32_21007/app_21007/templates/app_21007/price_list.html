@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Prices</title>{% endblock %}
+
+{% block content %}
+<div class="text-end pt-5">
+    <a href="{% url 'price_create' %}" class="btn btn-primary">Add Price</a>
+</div>
+<h1 class="text-center">List of Prices</h1>
+
+<form method="post" enctype="multipart/form-data" action="{% url 'price_import' %}">
+  {% csrf_token %}
+  <input type="file" name="csv_file" accept=".csv" required>
+  <input type="submit" value="Import Prices">
+</form>
+<li class="nav-item">
+  <a class="nav-link" href="/chart">Click here to see the Price Chart</a>
+</li>
+
+
+{% if price_list %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Value</th>
+        <th scope="col">Date</th>
+        <th scope="col">Selling Point</th>
+        <th scope="col">Product</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for price in price_list %}
+        <tr>
+          <th scope="row">{{ price.id }}</th>
+          <td>${{ price.value }}</td>
+          <td>{{ price.date }}</td>
+          <td>{{ price.sellingpoint.code }}</td>
+          <td>{{ price.product.label }}</td>
+          <td>
+            <a href="{% url 'price_detail' price.id %}" class="btn btn-info">View</a>
+            <a href="{% url 'price_update' price.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'price_delete' price.id %}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>There are no prices in the database.</p>
+{% endif %}
+{% endblock %}

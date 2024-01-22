@@ -1,0 +1,54 @@
+{% load static %}
+
+<html>
+<head>
+    <title>Price Evolution Chart</title>
+    <!--[if lte IE 8]>
+        <script src="{% static 'js/excanvas.js' %}"></script>
+    <![endif]-->
+</head>
+<body>
+    <h1>Price Evolution Chart</h1>
+
+    <canvas id="myChart" width="600" height="200"></canvas>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/Chart.min.js' %}"></script>
+    <script type="text/javascript">
+        $.get('{% url "line_chart_json" %}', function(data) {
+            var ctx = $("#myChart").get(0).getContext("2d");
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.labels,
+                    datasets: data.datasets
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'day',
+                                tooltipFormat: 'll',
+                                displayFormats: {
+                                    day: 'MMM D'
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Price'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

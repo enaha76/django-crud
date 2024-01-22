@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}<title>Selling Point Details</title>{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center">Details of Selling Point</h1>
+<ul class="list-group p-5">
+    <li class="list-group-item"><b>ID</b>: {{ sellingpoint.id }}</li>
+    <li class="list-group-item"><b>Code</b>: {{ sellingpoint.code }}</li>
+    <li class="list-group-item"><b>Wilaya</b>: {{ sellingpoint.wilaya }}</li>
+    <li class="list-group-item"><b>Moughataa</b>: {{ sellingpoint.moughataa }}</li>
+    <li class="list-group-item"><b>Commune</b>: {{ sellingpoint.commune }}</li>
+    <li class="list-group-item"><b>GPS Latitude</b>: {{ sellingpoint.gps_lat }}</li>
+    <li class="list-group-item"><b>GPS Longitude</b>: {{ sellingpoint.gps_long }}</li>
+</ul>
+
+{% endblock %}
